@@ -12,6 +12,9 @@ html,body{
 	overflow:hidden;
 	background:#000;
 }
+.audio {
+	width: 0;
+}
 </style>
 
 </head>
@@ -20,7 +23,7 @@ html,body{
 <canvas style="position:absolute;width:100%;height:100%;z-index:9999" class="canvas" ></canvas>
 <div class="overlay">
   <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span class="tabs-label">Share</span></div>
+    <div class="tabs-labels"><span class="tabs-label"></span><span class="tabs-label"></span><span class="tabs-label"></span></div>
 
     <div class="tabs-panels">
       <ul class="tabs-panel commands">
@@ -28,6 +31,7 @@ html,body{
     </div>
   </div>
 </div>
+<audio src="fireworks.mp3" controls autoplay loop class="audio"></audio>
 <script>
 function initVars(){
 
@@ -315,9 +319,6 @@ window.addEventListener("resize",()=>{
 
 initVars();
 frame();
-
-const mp3 = new Audio('./fireworks.mp3');  // 创建音频对象
-mp3.play(); // 播放
 </script>
 <script src="js/index.js"></script>
 

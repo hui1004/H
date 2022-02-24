@@ -13,7 +13,7 @@ html,body{
 	background:#000;
 }
 .audio {
-	width: 0;
+	display: none;
 }
 </style>
 
@@ -31,9 +31,23 @@ html,body{
     </div>
   </div>
 </div>
-<!-- <audio controls autoplay class="audio" id="audio">
+<audio controls preload class="audio" id="car_audio">
 	<source src="fireworks1.mp3" type="audio/mpeg">
-</audio> -->
+</audio>
+<!-- 必须加载微信api资源 --> 
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
+<script> 
+	document.addEventListener('DOMContentLoaded', function () {
+    function audioAutoPlay() {
+        var audio = document.getElementById('car_audio');
+            audio.play();
+        document.addEventListener("WeixinJSBridgeReady", function () {
+            audio.play();
+        }, false);
+    }
+    audioAutoPlay();
+});
+</script> 
 <script>
 function initVars(){
 
@@ -321,16 +335,6 @@ window.addEventListener("resize",()=>{
 
 initVars();
 frame();
-
-// const audioEl = document.getElementById('audio');
-
-// function forceSafariPlayAudio() {
-// 	audioEl.load(); // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
-// 	audioEl.play(); // iOS 7/8 仅需要 play 一下
-// }
-// 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
-// 因此我们通过一个用户交互事件来主动 play 一下 audio.
-// window.addEventListener('touchstart', forceSafariPlayAudio, false);
 
 </script>
 <script src="js/index.js"></script>

@@ -31,7 +31,8 @@ html,body{
     </div>
   </div>
 </div>
-<audio src="fireworks1.mp3" controls autoplay class="audio" id="audio"></audio>
+<audio src="fireworks1.mp3" controls autoplay class="audio" id="audio">
+</audio>
 <script>
 function initVars(){
 
@@ -326,7 +327,8 @@ function forceSafariPlayAudio() {
 	audioEl.load(); // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
 	audioEl.play(); // iOS 7/8 仅需要 play 一下
 }
-Media.src = "./fireworks1.mp3"; 
+alert(audioEl.networkState)
+audioEl.src = "fireworks1.mp3"; 
 // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
 // 因此我们通过一个用户交互事件来主动 play 一下 audio.
 window.addEventListener('touchstart', forceSafariPlayAudio, false);

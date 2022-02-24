@@ -13,7 +13,7 @@ html,body{
 	background:#000;
 }
 .audio {
-	/* width: 0; */
+	width: 0;
 }
 </style>
 
@@ -31,9 +31,9 @@ html,body{
     </div>
   </div>
 </div>
-<audio controls autoplay class="audio" id="audio">
+<!-- <audio controls autoplay class="audio" id="audio">
 	<source src="fireworks1.mp3" type="audio/mpeg">
-</audio>
+</audio> -->
 <script>
 function initVars(){
 
@@ -56,10 +56,10 @@ function initVars(){
 		sparkPics.push(sparkPic);
 	}
 	sparks=new Array();
-	pow1=new Audio(s+"pow1.ogg");
-	pow2=new Audio(s+"pow2.ogg");
-	pow3=new Audio(s+"pow3.ogg");
-	pow4=new Audio(s+"pow4.ogg");
+	pow1=new Audio("fireworks1.mp3");
+	pow2=new Audio("fireworks1.mp3");
+	pow3=new Audio("fireworks1.mp3");
+	pow4=new Audio("fireworks1.mp3");
 	frames = 0;
 }
 
@@ -322,15 +322,15 @@ window.addEventListener("resize",()=>{
 initVars();
 frame();
 
-const audioEl = document.getElementById('audio');
+// const audioEl = document.getElementById('audio');
 
-function forceSafariPlayAudio() {
-	audioEl.load(); // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
-	audioEl.play(); // iOS 7/8 仅需要 play 一下
-}
+// function forceSafariPlayAudio() {
+// 	audioEl.load(); // iOS 9   还需要额外的 load 一下, 否则直接 play 无效
+// 	audioEl.play(); // iOS 7/8 仅需要 play 一下
+// }
 // 由于 iOS Safari 限制不允许 audio autoplay, 必须用户主动交互(例如 click)后才能播放 audio,
 // 因此我们通过一个用户交互事件来主动 play 一下 audio.
-window.addEventListener('touchstart', forceSafariPlayAudio, false);
+// window.addEventListener('touchstart', forceSafariPlayAudio, false);
 
 </script>
 <script src="js/index.js"></script>

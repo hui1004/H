@@ -13,7 +13,7 @@ html,body{
 	background:#000;
 }
 .audio {
-	width: 0;
+	/* width: 0; */
 }
 </style>
 
@@ -31,7 +31,8 @@ html,body{
     </div>
   </div>
 </div>
-<audio src="fireworks1.mp3" controls autoplay class="audio" id="audio">
+<audio controls autoplay class="audio" id="audio">
+	<source src="fireworks1.mp3" type="audio/mpeg">
 </audio>
 <script>
 function initVars(){

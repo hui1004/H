@@ -34,19 +34,23 @@ html,body{
 <audio controls preload class="audio" id="car_audio">
 	<source src="fireworks1.mp3" type="audio/mpeg">
 </audio>
-<!-- 必须加载微信api资源 --> 
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script> 
 <script> 
+	//--创建页面监听，页面加载完毕--触发音频播放
 	document.addEventListener('DOMContentLoaded', function () {
-    function audioAutoPlay() {
-        var audio = document.getElementById('car_audio');
-            audio.play();
-        document.addEventListener("WeixinJSBridgeReady", function () {
-            audio.play();
-        }, false);
-    }
-    audioAutoPlay();
-});
+		function audioAutoPlay() {
+			var musicEle0 = document.getElementById('car_audio');
+			musicEle0.play();
+		}
+		audioAutoPlay();
+	});
+	//--创建触摸监听，当浏览器打开页面时，触摸屏幕触发事件，进行音频播放
+	document.addEventListener('touchstart', function () {
+		function audioAutoPlay() {
+			var musicEle0 = document.getElementById('car_audio');
+				musicEle0.play();
+		}
+		audioAutoPlay();
+	});
 </script> 
 <script>
 function initVars(){
